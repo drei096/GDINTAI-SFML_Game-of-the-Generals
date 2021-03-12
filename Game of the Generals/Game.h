@@ -14,9 +14,12 @@ public:
 	void run();
 private:
 	RenderWindow window;
+	Font font;
+	Text deadText;
 private:
 	void pollEvents();
 	void update();
 	void render();
+	void setGUI();
 };
-
+	
