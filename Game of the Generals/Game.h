@@ -16,8 +16,8 @@ private:
 	RenderWindow window;
 	Font font;
 	Text deadText;
-	Texture bgTexture, samplePcTexture;
-	Sprite bgSprite, samplePcSprite;
+	Texture bgTexture;
+	Sprite bgSprite;
 private:
 	void pollEvents();
 	void update();
