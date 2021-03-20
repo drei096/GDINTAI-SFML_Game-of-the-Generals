@@ -7,15 +7,15 @@
 using namespace std;
 using namespace sf;
 
-class Game
+class Level
 {
 public:
-	Game();
+	Level();
 	void run();
 private:
 	RenderWindow window;
 	Font font;
-	Text menuText;
+	Text deadText;
 	Texture bgTexture;
 	Sprite bgSprite;
 private:
@@ -24,4 +24,4 @@ private:
 	void render();
 	void setGUI();
 };
-	
+

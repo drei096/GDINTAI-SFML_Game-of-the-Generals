@@ -1,18 +1,18 @@
-#include "Game.h"
+#include "Level.h"
 
-Game::Game() : window(VideoMode(800, 600), "Game of the Generals")
+Level::Level()
 {
 	//put all initializations here
 	font.loadFromFile("Media/Fonts/Pixeled.ttf");
 	bgTexture.loadFromFile("Media/Textures/grass bg.jpg");
 	bgSprite.setTexture(bgTexture);
-	
 
-	menuText.setFont(font);
-	menuText.setCharacterSize(16);
+
+	deadText.setFont(font);
+	deadText.setCharacterSize(16);
 }
 
-void Game::run()
+void Level::run()
 {
 	while (window.isOpen())
 	{
@@ -22,7 +22,7 @@ void Game::run()
 	}
 }
 
-void Game::pollEvents()
+void Level::pollEvents()
 {
 	Event event;
 	while (window.pollEvent(event))
@@ -43,11 +43,11 @@ void Game::pollEvents()
 	}
 }
 
-void Game::update()
+void Level::update()
 {
 }
 
-void Game::render()
+void Level::render()
 {
 	window.clear();
 
@@ -56,15 +56,15 @@ void Game::render()
 	setGUI();
 
 	//PIECE RENDER
-	
+
 
 
 	window.display();
 }
 
-void Game::setGUI()
+void Level::setGUI()
 {
-	menuText.setString("GAME OF THE GENERALS");
-	menuText.setPosition((window.getSize().x/2) - 160, 30 );
-	window.draw(menuText);
+	deadText.setString("DEAD GENERALS");
+	deadText.setPosition(1000, 600);
+	window.draw(deadText);
 }
