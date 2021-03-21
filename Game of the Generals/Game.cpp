@@ -78,6 +78,7 @@ void Game::pollEvents()
 				playButton.setBackColor(Color::Black);
 				playButton.setTextColor(Color::White);
 			}
+			/*
 			if (mechanicsButton.isMouseHover(window))
 			{
 				mechanicsButton.setBackColor(Color::Green);
@@ -88,6 +89,7 @@ void Game::pollEvents()
 				mechanicsButton.setBackColor(Color::Black);
 				mechanicsButton.setTextColor(Color::White);
 			}
+			*/
 			if (backButton.isMouseHover(window))
 			{
 				backButton.setBackColor(Color::Green);
@@ -104,10 +106,16 @@ void Game::pollEvents()
 			{
 				exit(0);
 			}
+			if (playButton.isMouseHover(window))
+			{
+				window.close();
+			}
+			/*
 			if (mechanicsButton.isMouseHover(window))
 			{
 				gameState = "mechs";
 			}
+			*/
 			if (backButton.isMouseHover(window))
 			{
 				gameState = "MainMenu";
@@ -130,20 +138,25 @@ void Game::render(string gameState)
 		//BG AND UI RENDER
 		window.draw(bgSprite);
 		setGUI(0, 100);
+		//BUTTON RENDERS
 		playButton.renderButton(&window, "PLAY!", 550, 150);
-		mechanicsButton.renderButton(&window, "HOW TO PLAY", 550, 250);
+		//mechanicsButton.renderButton(&window, "HOW TO PLAY", 550, 250);
 		exitButton.renderButton(&window, "EXIT!", 550, 350);
 		
 	}
 	
+	/*
 	if (gameState == "mechs")
 	{
+		//BG AND UI RENDER
 		window.clear();
 		window.draw(bgSprite);
 		setGUI(150,0);
+		//BUTTON RENDERS
 		backButton.renderButton(&window, "BACK TO MENU", 10, 550);
 		
 	}
+	*/
 
 	//PIECE RENDER
 	

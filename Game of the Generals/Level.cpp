@@ -10,6 +10,8 @@ Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
 
 	deadText.setFont(font);
 	deadText.setCharacterSize(16);
+
+	gameState = "setup";
 }
 
 void Level::run()
@@ -18,7 +20,7 @@ void Level::run()
 	{
 		pollEvents();
 		update();
-		render();
+		render(gameState);
 	}
 }
 
@@ -56,24 +58,28 @@ void Level::update()
 {
 }
 
-void Level::render()
+void Level::render(string gameState)
 {
-	window.clear();
+	if (gameState == "setup")
+	{
+		window.clear();
 
-	//BG AND UI RENDER
-	window.draw(bgSprite);
-	setGUI();
+		//BG AND UI RENDER
+		window.draw(bgSprite);
+		setGUI(1000, 600);
 
-	//PIECE RENDER
+		//PIECE RENDER
+	}
+	
 
 
 
 	window.display();
 }
 
-void Level::setGUI()
+void Level::setGUI(float logoPosX, float logoPosY)
 {
 	deadText.setString("DEAD GENERALS");
-	deadText.setPosition(1000, 600);
+	deadText.setPosition(logoPosX, logoPosY);
 	window.draw(deadText);
 }

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <vector>
+#include "Button.h"
 
 using namespace std;
 using namespace sf;
@@ -19,10 +20,12 @@ private:
 	Text deadText;
 	Texture bgTexture;
 	Sprite bgSprite;
+	Button exitButton;
+	string gameState;
 private:
 	void pollEvents();
 	void update();
-	void render();
-	void setGUI();
+	void render(string gameState);
+	void setGUI(float logoPosX, float logoPosY);
 };
 
