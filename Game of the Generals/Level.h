@@ -12,6 +12,7 @@ class Level
 public:
 	Level();
 	void run();
+	bool isRunning();
 private:
 	RenderWindow window;
 	Font font;

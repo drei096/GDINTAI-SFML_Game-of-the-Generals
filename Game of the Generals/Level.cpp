@@ -1,6 +1,6 @@
 #include "Level.h"
 
-Level::Level()
+Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
 {
 	//put all initializations here
 	font.loadFromFile("Media/Fonts/Pixeled.ttf");
@@ -20,6 +20,15 @@ void Level::run()
 		update();
 		render();
 	}
+}
+
+bool Level::isRunning()
+{
+	while (window.isOpen())
+	{
+		return true;
+	}
+	return false;
 }
 
 void Level::pollEvents()

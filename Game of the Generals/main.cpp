@@ -4,10 +4,18 @@
 int main()
 {
     Game game;
+    
+    while(game.isRunning())
+    {
+        game.run();
+    }
+    
     Level level;
 
-    game.run();
-
-    level.run();
+    while(level.isRunning())
+    {
+        level.run();
+    }
+    
     return 0;
 }
