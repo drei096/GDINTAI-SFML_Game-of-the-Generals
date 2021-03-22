@@ -21,6 +21,7 @@ public:
 	void setPosition(Vector2f pos);
 	void renderButton(RenderTarget* target, string text, float buttonX, float buttonY);
 	bool isMouseHover(RenderWindow& window);
+	Vector2f getSize();
 
 private:
 	void initShape();

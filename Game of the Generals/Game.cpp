@@ -48,6 +48,7 @@ void Game::pollEvents()
 		switch (event.type)
 		{
 		case Event::Closed:
+			exit(0);
 			window.close();
 			break;
 		case Event::KeyPressed:
@@ -109,6 +110,8 @@ void Game::pollEvents()
 			if (playButton.isMouseHover(window))
 			{
 				window.close();
+				Level level;
+				level.run();
 			}
 			/*
 			if (mechanicsButton.isMouseHover(window))

@@ -59,6 +59,11 @@ bool Button::isMouseHover(RenderWindow& window)
 	return false;
 }
 
+Vector2f Button::getSize()
+{
+	return button.getSize();
+}
+
 void Button::initShape()
 {
 	this->button.setSize(Vector2f(200.0f, 50.0f));

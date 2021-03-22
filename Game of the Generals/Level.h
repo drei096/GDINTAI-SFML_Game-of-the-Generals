@@ -4,6 +4,8 @@
 #include <SFML/Audio.hpp>
 #include <vector>
 #include "Button.h"
+#include "Game.h"
+#include "Entity.h"
 
 using namespace std;
 using namespace sf;
@@ -17,15 +19,17 @@ public:
 private:
 	RenderWindow window;
 	Font font;
-	Text deadText;
-	Texture bgTexture;
-	Sprite bgSprite;
-	Button exitButton;
+	Text deadTextP1, deadTextP2, stateIndicator;
+	Texture bgTexture, fenceTexture;
+	Sprite bgSprite, fenceSprite;
+	Button exitButton, readyButton;
 	string gameState;
+	vector <Entity*> entityList;
 private:
 	void pollEvents();
 	void update();
 	void render(string gameState);
-	void setGUI(float logoPosX, float logoPosY);
+	void setGUI();
+	void createEntity(string, float, float);
 };
 

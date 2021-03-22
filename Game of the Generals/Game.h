@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <vector>
 #include "Button.h"
+#include "Level.h"
 
 using namespace std;
 using namespace sf;

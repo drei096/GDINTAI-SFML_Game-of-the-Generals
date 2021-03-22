@@ -9,13 +9,5 @@ int main()
     {
         game.run();
     }
-    
-    Level level;
-
-    while(level.isRunning())
-    {
-        level.run();
-    }
-    
     return 0;
 }
