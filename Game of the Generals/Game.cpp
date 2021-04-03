@@ -1,8 +1,11 @@
 #include "Game.h"
+#include "TextureManager.h"
 
 Game::Game() : window(VideoMode(800, 600), "Game of the Generals")
 {
 	//put all initializations here
+	TextureManager::getInstance()->loadAll();
+
 	font.loadFromFile("Media/Fonts/Pixeled.ttf");
 	bgTexture.loadFromFile("Media/Textures/grass bg.jpg");
 	bgSprite.setTexture(bgTexture);

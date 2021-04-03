@@ -22,12 +22,12 @@ private:
 	Text deadTextP1, deadTextP2, stateIndicator;
 	Texture bgTexture, fenceTexture;
 	Sprite bgSprite, fenceSprite;
-	Button exitButton, readyButton;
+	Button exitButton, readyButton, confirmExit;
 	string gameState;
 	vector <Entity*> entityList;
 private:
 	void pollEvents();
-	void update();
+	void update(string gameState);
 	void render(string gameState);
 	void setGUI();
 	void createEntity(string, float, float);

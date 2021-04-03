@@ -18,6 +18,7 @@ Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
 
 	exitButton.initFont(font);
 	readyButton.initFont(font);
+	confirmExit.initFont(font);
 
 	gameState = "setup";
 }
@@ -32,7 +33,7 @@ void Level::run()
 	while (window.isOpen())
 	{
 		pollEvents();
-		update();
+		update(gameState);
 		render(gameState);
 	}
 }
@@ -84,26 +85,44 @@ void Level::pollEvents()
 				readyButton.setBackColor(Color::Black);
 				readyButton.setTextColor(Color::White);
 			}
+			if (confirmExit.isMouseHover(window))
+			{
+				confirmExit.setBackColor(Color::Green);
+				confirmExit.setTextColor(Color::Black);
+			}
+			else
+			{
+				confirmExit.setBackColor(Color::Black);
+				confirmExit.setTextColor(Color::White);
+			}
 			break;
 		case Event::MouseButtonPressed:
 			if (exitButton.isMouseHover(window))
 			{
-				window.close();
-				Game game;
-				game.run();
+				gameState = "hold";
 			}
 			if (readyButton.isMouseHover(window))
 			{
 				gameState = "play";
 			}
-			break;
+			if (confirmExit.isMouseHover(window))
+			{
+				gameState = "exit";
+			}
 		}
 	}
 }
 
-void Level::update()
+void Level::update(string gameState)
 {
+	if (gameState == "exit")
+	{
+		window.close();
+		Game game;
+		game.run();
+	}
 }
+
 
 void Level::render(string gameState)
 {
@@ -145,6 +164,27 @@ void Level::render(string gameState)
 		window.draw(tempBarrier);
 
 		//PIECE RENDER
+	}
+
+	if (gameState == "hold")
+	{
+		//BG AND UI RENDER
+		window.draw(bgSprite);
+		setGUI();
+		confirmExit.renderButton(&window, "EXIT!", window.getSize().x - exitButton.getSize().x, 10);
+
+		RectangleShape tempBarrier;
+		tempBarrier.setFillColor(Color::Black);
+		tempBarrier.setSize(Vector2f(800.0f, 80.0f));
+		tempBarrier.setPosition(810, 360);
+		tempBarrier.setOutlineColor(Color::Red);
+		tempBarrier.setOutlineThickness(2.5);
+		window.draw(tempBarrier);
+
+		stateIndicator.setString("You will lose all progress\n when you quit. Continue?");
+		stateIndicator.setPosition(830, 370);
+		window.draw(stateIndicator);
+
 	}
 
 
