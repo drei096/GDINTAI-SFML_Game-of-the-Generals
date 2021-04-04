@@ -12,7 +12,7 @@ public:
 	void update(Time deltaTime);
 	int getRanking();
 	bool getStatus();
-	bool isMouseHover();
+	bool isMouseHover(RenderWindow& window);
 
 private:
 	bool isDead = false;

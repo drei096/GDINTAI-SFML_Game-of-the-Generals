@@ -18,6 +18,7 @@ public:
 	bool isRunning();
 public:
 	RenderWindow window;
+	const Time TimePerFrame = seconds(1.f / 60.f);
 private:
 	Font font;
 	Text deadTextP1, deadTextP2, stateIndicator;
@@ -28,7 +29,7 @@ private:
 	vector <Entity*> entityList;
 private:
 	void pollEvents();
-	void update(string gameState);
+	void update(string gameState, Time);
 	void render(string gameState);
 	void setGUI();
 	void createEntity(string, float, float);

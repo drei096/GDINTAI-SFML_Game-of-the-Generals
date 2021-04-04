@@ -3,10 +3,9 @@
 #include "Media/Pieces/FiveStarG.h"
 #include "TextureManager.h"
 
-
-
 Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
 {
+
 	//put all initializations here
 	font.loadFromFile("Media/Fonts/Pixeled.ttf");
 	bgTexture.loadFromFile("Media/Textures/grass bg.jpg");
@@ -38,10 +37,19 @@ void Level::createEntity(string textureKey, float xPos, float yPos)
 
 void Level::run()
 {
+
+	Clock clock;
+	Time timeSinceLast = Time::Zero;
 	while (window.isOpen())
 	{
 		pollEvents();
-		update(gameState);
+		timeSinceLast += clock.restart();
+		while (timeSinceLast > TimePerFrame)
+		{
+			timeSinceLast -= TimePerFrame;
+			pollEvents();
+			update(gameState,TimePerFrame);
+		}
 		render(gameState);
 	}
 }
@@ -63,17 +71,17 @@ void Level::pollEvents()
 		switch (event.type)
 		{
 		case Event::Closed:
-			window.close();
+			(window).close();
 			break;
 		case Event::KeyPressed:
 			if (event.key.code == Keyboard::Escape)
 			{
-				window.close();
+				(window).close();
 				exit(0);
 				break;
 			}
 		case Event::MouseMoved:
-			if (exitButton.isMouseHover(window))
+			if (exitButton.isMouseHover((window)))
 			{
 				exitButton.setBackColor(Color::Green);
 				exitButton.setTextColor(Color::Black);
@@ -83,7 +91,7 @@ void Level::pollEvents()
 				exitButton.setBackColor(Color::Black);
 				exitButton.setTextColor(Color::White);
 			}
-			if (readyButton.isMouseHover(window))
+			if (readyButton.isMouseHover((window)))
 			{
 				readyButton.setBackColor(Color::Green);
 				readyButton.setTextColor(Color::Black);
@@ -93,7 +101,7 @@ void Level::pollEvents()
 				readyButton.setBackColor(Color::Black);
 				readyButton.setTextColor(Color::White);
 			}
-			if (confirmExit.isMouseHover(window))
+			if (confirmExit.isMouseHover((window)))
 			{
 				confirmExit.setBackColor(Color::Green);
 				confirmExit.setTextColor(Color::Black);
@@ -105,27 +113,30 @@ void Level::pollEvents()
 			}
 			break;
 		case Event::MouseButtonPressed:
-			if (exitButton.isMouseHover(window))
+			if (exitButton.isMouseHover((window)))
 			{
 				gameState = "hold";
 			}
-			if (readyButton.isMouseHover(window))
+			if (readyButton.isMouseHover((window)))
 			{
 				gameState = "play";
 			}
-			if (confirmExit.isMouseHover(window))
+			if (confirmExit.isMouseHover((window)))
 			{
 				gameState = "exit";
 			}
+		default:
+			GameObjectManager::getInstance()->processInput(event);
 		}
 	}
 }
 
-void Level::update(string gameState)
+void Level::update(string gameState, Time deltaTime)
 {
+	GameObjectManager::getInstance()->update(deltaTime);
 	if (gameState == "exit")
 	{
-		window.close();
+		(window).close();
 		Game game;
 		game.run();
 	}
@@ -136,10 +147,10 @@ void Level::render(string gameState)
 {
 	if (gameState == "setup")
 	{
-		window.clear();
+		(window).clear();
 
 		//BG AND UI RENDER
-		window.draw(bgSprite);
+		(window).draw(bgSprite);
 		setGUI();
 		exitButton.renderButton(&window, "EXIT TO MENU", window.getSize().x - exitButton.getSize().x, 10);
 
