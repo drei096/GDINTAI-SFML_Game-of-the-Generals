@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "TextureManager.h"
+#include "GameObjectManager.h"
+#include "Media/Pieces/FiveStarG.h"
 
 Game::Game() : window(VideoMode(800, 600), "Game of the Generals")
 {

@@ -19,7 +19,7 @@ public:
 	void detachChild(GameObject* child);
 	void setPosition(float x, float y);
 
-private:
+protected:
 	Transformable transformable;
 	string name;
 	Sprite* sprite;

@@ -146,22 +146,52 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Media\Pieces\Flag.cpp" />
+    <ClCompile Include="Media\Pieces\FirstLt.cpp" />
+    <ClCompile Include="Media\Pieces\Captain.cpp" />
+    <ClCompile Include="Media\Pieces\Major.cpp" />
+    <ClCompile Include="Media\Pieces\Colonel.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Media\Pieces\LtCol.cpp" />
+    <ClCompile Include="Media\Pieces\FourStarG.cpp" />
+    <ClCompile Include="Media\Pieces\FiveStarG.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Media\Pieces\GameObject.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Media\Pieces\OneStarG.cpp" />
+    <ClCompile Include="Media\Pieces\SecondLt.cpp" />
+    <ClCompile Include="Media\Pieces\Sergeant.cpp" />
+    <ClCompile Include="Media\Pieces\Spy.cpp" />
+    <ClCompile Include="Media\Pieces\Private.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Media\Pieces\ThreeStarG.cpp" />
+    <ClCompile Include="Media\Pieces\TwoStarG.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Media\Pieces\Flag.h" />
+    <ClInclude Include="Media\Pieces\FirstLt.h" />
+    <ClInclude Include="Media\Pieces\Captain.h" />
+    <ClInclude Include="Media\Pieces\Major.h" />
+    <ClInclude Include="Media\Pieces\Colonel.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Media\Pieces\LtCol.h" />
+    <ClInclude Include="Media\Pieces\FourStarG.h" />
+    <ClInclude Include="Media\Pieces\FiveStarG.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Media\Pieces\GameObject.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="Media\Pieces\OneStarG.h" />
+    <ClInclude Include="Media\Pieces\SecondLt.h" />
+    <ClInclude Include="Media\Pieces\Sergeant.h" />
+    <ClInclude Include="Media\Pieces\Spy.h" />
+    <ClInclude Include="Media\Pieces\Private.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Media\Pieces\ThreeStarG.h" />
+    <ClInclude Include="Media\Pieces\TwoStarG.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,9 @@
 #include "Level.h"
+#include "GameObjectManager.h"
+#include "Media/Pieces/FiveStarG.h"
+#include "TextureManager.h"
+
+
 
 Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
 {
@@ -19,6 +24,9 @@ Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
 	exitButton.initFont(font);
 	readyButton.initFont(font);
 	confirmExit.initFont(font);
+
+	FiveStarG* blackFiveStar = new FiveStarG("blackFiveStar");
+	GameObjectManager::getInstance()->addObject(blackFiveStar);
 
 	gameState = "setup";
 }
@@ -144,6 +152,7 @@ void Level::render(string gameState)
 		readyButton.renderButton(&window, "READY!", 810, 375);
 	
 		//PIECE RENDER
+		GameObjectManager::getInstance()->draw(&window);
 	}
 	
 	if (gameState == "play")
@@ -164,6 +173,7 @@ void Level::render(string gameState)
 		window.draw(tempBarrier);
 
 		//PIECE RENDER
+		GameObjectManager::getInstance()->draw(&window);
 	}
 
 	if (gameState == "hold")

@@ -16,8 +16,9 @@ public:
 	Level();
 	void run();
 	bool isRunning();
-private:
+public:
 	RenderWindow window;
+private:
 	Font font;
 	Text deadTextP1, deadTextP2, stateIndicator;
 	Texture bgTexture, fenceTexture;

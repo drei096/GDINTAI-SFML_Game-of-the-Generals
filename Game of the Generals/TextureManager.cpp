@@ -18,10 +18,14 @@ void TextureManager::loadAll()
 {
 	string stdPath = "Media/Textures/";
 
-	for (int i = 0; i < 15; i++)
+	for (int i = 0; i < 30; i++)
 	{
-		loadTexture("black" + i, stdPath + "b_0" + to_string(i) + ".png");
-		loadTexture("white" + i, stdPath + "w_0" + to_string(i) + ".png");
+		if (i >= 0 && i < 15)
+		{
+			loadTexture("black" + to_string(i), stdPath + "p_0" + to_string(i) + ".png");
+		}
+		else
+			loadTexture("white" + to_string(i), stdPath + "p_0" + to_string(i) + ".png");
 	}
 }
 

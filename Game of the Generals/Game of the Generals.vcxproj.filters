@@ -33,10 +33,55 @@
     <ClCompile Include="TextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
+    <ClCompile Include="GameObjectManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjectManager.cpp">
+    <ClCompile Include="Media\Pieces\FiveStarG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\FourStarG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\ThreeStarG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\TwoStarG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\OneStarG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\LtCol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\Colonel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\Major.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\Captain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\FirstLt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\SecondLt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\Sergeant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\Spy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\Private.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\Flag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Media\Pieces\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,10 +101,55 @@
     <ClInclude Include="TextureManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
+    <ClInclude Include="GameObjectManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjectManager.h">
+    <ClInclude Include="Media\Pieces\FiveStarG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\FourStarG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\ThreeStarG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\TwoStarG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\OneStarG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\LtCol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\Colonel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\Major.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\Captain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\FirstLt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\SecondLt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\Sergeant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\Spy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\Private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\Flag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Media\Pieces\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
