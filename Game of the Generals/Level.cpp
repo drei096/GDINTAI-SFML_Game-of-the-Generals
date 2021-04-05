@@ -3,6 +3,7 @@
 #include "Media/Pieces/FiveStarG.h"
 #include "TextureManager.h"
 
+
 Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
 {
 
@@ -126,7 +127,7 @@ void Level::pollEvents()
 				gameState = "exit";
 			}
 		default:
-			GameObjectManager::getInstance()->processInput(event);
+			GameObjectManager::getInstance()->processInput(event, &window);
 		}
 	}
 }

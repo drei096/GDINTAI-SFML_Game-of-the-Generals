@@ -19,7 +19,7 @@ public:
     GameObject* findObjectByName(string name);
     List getAllObjects();
     int activeObjects();
-    void processInput(Event event);
+    void processInput(Event event, RenderWindow* window);
     void update(sf::Time deltaTime);
     void draw(sf::RenderWindow* window);
     void addObject(GameObject* window);

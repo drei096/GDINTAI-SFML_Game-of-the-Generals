@@ -17,8 +17,8 @@ public:
 	void run();
 	bool isRunning();
 public:
-	RenderWindow window;
 	const Time TimePerFrame = seconds(1.f / 60.f);
+	RenderWindow window;
 private:
 	Font font;
 	Text deadTextP1, deadTextP2, stateIndicator;

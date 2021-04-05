@@ -31,9 +31,9 @@ int GameObjectManager::activeObjects() {
 }
 
 
-void GameObjectManager::processInput(Event event) {
+void GameObjectManager::processInput(Event event, RenderWindow* window) {
 	for (int i = 0; i < gameObjectList.size(); i++) {
-		gameObjectList[i]->processInput(event);
+		gameObjectList[i]->processInput(event, window);
 	}
 }
 

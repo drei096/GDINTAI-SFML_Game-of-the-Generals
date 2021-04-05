@@ -27,7 +27,7 @@ void GameObject::draw(RenderWindow* window, RenderStates renderStates)
 
 	window->draw(*sprite, renderStates);
 
-	cout << "Drawing " + getName() + "\n";
+	//cout << "Drawing " + getName() + "\n";
 
 	//draw its children
 	for (int i = 0; i < childList.size(); i++) 
@@ -37,7 +37,11 @@ void GameObject::draw(RenderWindow* window, RenderStates renderStates)
 	}
 }
 
-void GameObject::update(Time deltaTime) 
+void GameObject::processInput(Event event, RenderWindow* window)
+{
+}
+
+void GameObject::update(Time deltaTime)
 {
 	// Add Implementation here
 

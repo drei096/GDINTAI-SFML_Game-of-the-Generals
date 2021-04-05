@@ -12,7 +12,7 @@ public:
 	GameObject(string name);
 	virtual ~GameObject();
 	virtual void initialize() = 0;
-	virtual void processInput(Event event) = 0;
+	virtual void processInput(Event event, RenderWindow *window);
 	virtual void update(Time deltaTime);
 	void draw(RenderWindow* window, RenderStates renderStates);
 	string getName();
