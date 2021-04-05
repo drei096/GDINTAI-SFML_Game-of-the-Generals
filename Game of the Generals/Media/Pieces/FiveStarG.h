@@ -18,8 +18,7 @@ public:
 private:
 	bool isDead = false;
 	int ranking = 15;
-	bool isHeldUp = false;
-	bool isHeldDown = false;
+	bool isSelected = false;
 	const float SPEED_MULTIPLIER = 300.0f;
 };
 
