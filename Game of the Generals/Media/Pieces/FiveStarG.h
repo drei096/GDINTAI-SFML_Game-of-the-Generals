@@ -15,10 +15,12 @@ public:
 	bool getStatus();
 	bool isMouseHover(RenderWindow* window);
 
-private:
-	bool isDead = false;
-	int ranking = 15;
+public:
 	bool isSelected = false;
+
+private:
+	int ranking = 15;
 	const float SPEED_MULTIPLIER = 300.0f;
+	bool isDead = false;
 };
 

@@ -21,7 +21,7 @@ void FiveStarG::initialize() {
 		sprite->setTexture(*TextureManager::getInstance()->getTexture("white0"));
 
 	Vector2u textureSize = sprite->getTexture()->getSize();
-	sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
+	//sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 	transformable.setPosition(Game::WINDOW_WIDTH / 2, Game::WINDOW_HEIGHT / 2);
 	
 
@@ -30,24 +30,24 @@ void FiveStarG::initialize() {
 void FiveStarG::processInput(Event event, RenderWindow* window)
 {
 
-	if (event.type == Event::MouseButtonPressed && event.key.code == Mouse::Left)
+	if (event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Left)
 	{
 		if (isMouseHover(window))
 		{
-			this->transformable.setScale(2.0, 2.0); //remove later
+			this->transformable.setScale(2.0, 2.0); //selected indicator
 			isSelected = true;
 		}
 	}
-	if(event.type == Event::MouseButtonPressed && event.key.code == Mouse::Right)
+	else if(event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Right)
 	{
-		this->transformable.setScale(1.0, 1.0); //remove later
+		this->transformable.setScale(1.0, 1.0); //selected indicator
 		isSelected = false;
 	}
 }
 
 void FiveStarG::update(Time deltaTime) {
 
-	
+	/*
 	Vector2f offset(0.0f, 0.0f);
 
 	GameObject::update(deltaTime);
@@ -62,7 +62,7 @@ void FiveStarG::update(Time deltaTime) {
 		//this->transformable.move(offset * deltaTime.asSeconds());
 
 	}
-	
+	*/
 	/*
 	else if (this->moveDown) {
 		offset.y += this->SPEED_MULTIPLIER;
@@ -101,7 +101,7 @@ bool FiveStarG::isMouseHover(RenderWindow* window)
 	float iconyPosHeight = transformable.getPosition().y + (sprite->getLocalBounds().height);
 
 
-	if (mouseX < iconxPosWidth && mouseY < iconyPosHeight)
+	if (mouseX < iconxPosWidth && mouseY < iconyPosHeight && mouseX >= iconPosX && mouseY >= iconPosY)
 	{
 		return true;
 	}

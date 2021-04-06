@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Media\Pieces\Flag.cpp" />
     <ClCompile Include="Media\Pieces\FirstLt.cpp" />
@@ -170,6 +171,7 @@
     <ClCompile Include="Media\Pieces\TwoStarG.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Board.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Media\Pieces\Flag.h" />
     <ClInclude Include="Media\Pieces\FirstLt.h" />
