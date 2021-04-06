@@ -22,5 +22,6 @@ private:
 	int ranking = 15;
 	const float SPEED_MULTIPLIER = 300.0f;
 	bool isDead = false;
+	bool move = false;
 };
 
