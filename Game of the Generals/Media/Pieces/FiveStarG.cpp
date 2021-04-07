@@ -21,7 +21,7 @@ void FiveStarG::initialize() {
 		sprite->setTexture(*TextureManager::getInstance()->getTexture("white0"));
 
 	Vector2u textureSize = sprite->getTexture()->getSize();
-	transformable.setOrigin(textureSize.x / 2, (textureSize.y / 2) - 20.0f);
+	transformable.setOrigin(textureSize.x / 2, (textureSize.y / 2));
 	transformable.setPosition(Game::WINDOW_WIDTH / 2, Game::WINDOW_HEIGHT / 2);
 	
 
@@ -46,7 +46,8 @@ void FiveStarG::processInput(Event event, RenderWindow* window)
 	else if (isSelected)
 	{
 		this->transformable.setScale(1.0, 1.0);
-		this->transformable.setPosition(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y - 20.0f);
+		if(Mouse::getPosition(*window).x < 900)
+			this->transformable.setPosition(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y);
 	}
 }
 
