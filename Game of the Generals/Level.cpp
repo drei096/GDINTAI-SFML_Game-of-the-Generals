@@ -2,6 +2,8 @@
 #include "GameObjectManager.h"
 #include "Media/Pieces/FiveStarG.h"
 #include "TextureManager.h"
+#include "Board.h"
+
 
 
 Level::Level() : window(VideoMode(1280, 720), "Game of the Generals")
